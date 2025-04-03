@@ -7,6 +7,7 @@ export function routeHandler(request, response) {//criando o middlewares de rota
 
     if (route) {//verificando se a rota foi encontrada
         const routeParams = request.url.match(route.path)
+        console.log(routeParams)//mostrando os parâmetros da rota
         const { ...params} = routeParams.groups
         
         request.params = params
