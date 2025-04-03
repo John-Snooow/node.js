@@ -1,1 +1,0 @@
-Aqui eu acabei fazendo o Readme para a pasta do Node.js mais quando for abrir o projeto abra por aqui na pasta SRC, abrindo no vscode os códigos vão funcionar perfeitamente 

@@ -1,0 +1,1 @@
+Aqui eu acabei fazendo o Readme para a pasta do Node.OBS: Clica com o botão esquerdo em cima da pasta API e abro com VScode
