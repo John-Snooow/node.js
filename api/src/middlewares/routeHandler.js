@@ -1,5 +1,6 @@
 
 import { routes } from '../routes.js';
+import { extractQueryParams } from '../utils/extract-query-parms.js';
 export function routeHandler(request, response) {//criando o middlewares de rota
     const route = routes.find((route) => {
         return route.method === request.method && route.path.test(request.url)
@@ -7,10 +8,11 @@ export function routeHandler(request, response) {//criando o middlewares de rota
 
     if (route) {//verificando se a rota foi encontrada
         const routeParams = request.url.match(route.path)
-        console.log(routeParams)//mostrando os parâmetros da rota
-        const { ...params} = routeParams.groups
+
+        const { query, ...params} = routeParams.groups
         
         request.params = params
+        request.query = query ? extractQueryParams(query) : {}
         
         return route.cotroller(request, response)//chamando a rota
     }

@@ -4,8 +4,8 @@ export const routes =[// litas com rotas
     {// primeira rota
         method: 'GET',
         path: '/products',
-        cotroller:(request, response) => {
-            return response.end('Lista de produtos!')
+        cotroller:(request, response) => {          
+            return response.end(JSON.stringify(request.query))
         },
     },
     {// segunda rota
