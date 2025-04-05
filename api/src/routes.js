@@ -4,21 +4,26 @@ export const routes =[// litas com rotas
     {// primeira rota
         method: 'GET',
         path: '/products',
-        cotroller:(request, response) => {          
-            return response.end(JSON.stringify(request.query))
+        cotroller:({request, response, database}) => {          
+            const products = database.select('products')
+
+            return response.end(JSON.stringify(products))
         },
     },
     {// segunda rota
         method: 'POST',
         path: '/products',
-        cotroller:(request, response) => {
-            return response.writeHead(201).end(JSON.stringify(request.body))
+        cotroller:({request, response, database}) => {
+            const { name, price } = request.body
+
+            database.insert('products', {name, price})
+            return response.writeHead(201).end()
         },
     },
     {// terceira rota
         method: 'DELETE',
         path: '/products/:id',
-        cotroller:(request, response) => {
+        cotroller:({request, response}) => {
             return response.end("Produto removido com ID: " + request.params.id)
         },
     },
