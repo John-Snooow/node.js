@@ -3,7 +3,7 @@ export class Database {
 
   //insert PARA INSERIR
   insert(table, data) {
-    if (Array.isArray(this.Database[table])) {
+    if (Array.isArray(this.database[table])) {
       this.database[table].push(data);
     } else {
       this.database[table] = [data];
