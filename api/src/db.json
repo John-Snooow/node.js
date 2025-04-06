@@ -1,1 +1,12 @@
-{"products":[{"name":"caixas de som","price":160.5}]}
+{
+    "products": [
+        {
+            "name": "caixas de som",
+            "price": 160.5
+        },
+        {
+            "name": "mouse",
+            "price": 200.5
+        }
+    ]
+}
